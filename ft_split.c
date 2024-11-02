@@ -63,7 +63,7 @@ char **ft_split(char const *s, char c)
     return ptr;
 }
 
-int main() 
+/*int main() 
 {
 	char s[] = "    ayoub adouay nadi manadich    !! olah ta naidi ";
 	char **ptr = ft_split(s, ' ');
@@ -75,4 +75,4 @@ int main()
 		i++;
 	}
 	return 0;
-}
+}*/
