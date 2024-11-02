@@ -13,7 +13,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
     while (haystack[i] != '\0' && i < len)
     {
         j = 0;
-        while(haystack[i + j] == needle[j] && needle[j] != '\0')
+        while(haystack[i + j] == needle[j] && needle[j] != '\0' && i + j < len)
             j++;
         
         if(needle[j] == '\0')
