@@ -45,13 +45,13 @@ char *ft_itoa(int n)
     char str[12];
     char *origin;
     int pos;
-    int i = 0;
-    
+    int i;
+
+    i = 0;
     origin = malloc((len + 1) * sizeof(char));
     if(!origin)
         return NULL;
     pos = set_string(n, str);
-    //set position of string !
     if(n < 0)
     {
         origin[i] = '-';

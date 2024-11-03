@@ -24,6 +24,8 @@ char *ft_strtrim(char const *s1, char const *set)
     {
         start++;
     }
+    if (start == len)
+        return NULL;
     while (checker(s1[len] ,set) && len > start) 
     {
         len--;
@@ -31,9 +33,3 @@ char *ft_strtrim(char const *s1, char const *set)
     ptr = ft_substr(s1, start, (len + 1) - start);
     return ptr;
 }
-/*int main()
-{
-  char s1[] = "gggggg";
-  char set[] = "g";
-  printf("%s\n", ft_strtrim(s1, set));
-}*/
