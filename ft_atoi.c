@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayadouay <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/04 12:30:45 by ayadouay          #+#    #+#             */
+/*   Updated: 2024/11/04 15:46:56 by ayadouay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_atoi(const char *nptr)
@@ -17,18 +29,11 @@ int	ft_atoi(const char *nptr)
 	}
 	while (*nptr != '\0' && (*nptr >= '0' && *nptr <= '9'))
 	{
-		if(r > (LONG_MAX - (*nptr -48)) / 10)
-			return(-signe * (signe == 1));
+		if (r > (LONG_MAX - (*nptr -48)) / 10)
+			return (-signe * (signe == 1));
 		r = r * 10 + (*nptr - 48);
 		nptr++;
 	}
 	r = r * signe;
 	return (r);
 }
-/*int main()
-{
-    char str[] = "922337203685472";
-    printf("my atoi : %d\n", ft_atoi(str));
-    printf("atoi standar : %d\n", atoi(str));
-}*/
-
