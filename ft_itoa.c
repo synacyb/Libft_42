@@ -6,38 +6,36 @@
 /*   By: ayadouay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 15:50:25 by ayadouay          #+#    #+#             */
-/*   Updated: 2024/11/04 16:09:30 by ayadouay         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:39:53 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static	int	set_size_of_string(int n)
+static	int	set_size_of_string(long num)
 {
 	int	counter;
 
 	counter = 0;
-	if (n < 0)
+	if (num < 0)
 	{
-		n = n * -1;
+		num = num * -1;
 		counter = 1;
 	}
-	else if (n == 0)
+	else if (num == 0)
 		counter++;
-	while (n > 0)
+	while (num > 0)
 	{
-		n = n / 10;
+		num = num / 10;
 		counter++;
 	}
 	return (counter);
 }
 
-static	int	set_string(int n, char *str)
+static	int	set_string(long num, char *str)
 {
 	char	res;
-	long	num;
 	int		index;
 
-	num = n;
 	index = 0;
 	if (num < 0)
 		num = num * -1;
@@ -56,20 +54,22 @@ static	int	set_string(int n, char *str)
 char	*ft_itoa(int n)
 {
 	int		len;
+	long	num;
 	char	str[12];
 	char	*origin;
 	int		pos;
 	int		i;
-
-	len = set_size_of_string(n);
+	
+	num = n;
+	len = set_size_of_string(num);
 	i = 0;
-	pos = set_string(n, str);
+	pos = set_string(num, str);
 	origin = malloc((len + 1) * sizeof(char));
 	if (!origin)
 		return (NULL);
-	if (n < 0)
+	if (num < 0)
 		origin[i++] = '-';
-	if (n == 0)
+	if (num == 0)
 		origin[i++] = '0';
 	else
 	{
