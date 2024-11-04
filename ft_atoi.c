@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -18,19 +17,18 @@ int	ft_atoi(const char *nptr)
 	}
 	while (*nptr != '\0' && (*nptr >= '0' && *nptr <= '9'))
 	{
+		if(r > (LONG_MAX - (*nptr -48)) / 10)
+			return(-signe * (signe == 1));
 		r = r * 10 + (*nptr - 48);
 		nptr++;
 	}
 	r = r * signe;
-	if (r < (-2147483648))
-		return (0);
-	else if (r > 2147483647)
-		return (-1);
 	return (r);
 }
 /*int main()
 {
-    char str[] = "36562725726767297856743726";
+    char str[] = "922337203685472";
     printf("my atoi : %d\n", ft_atoi(str));
     printf("atoi standar : %d\n", atoi(str));
 }*/
+
