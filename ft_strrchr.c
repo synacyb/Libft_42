@@ -15,13 +15,20 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	const char *ptr = s + (ft_strlen(s) - 1);
-	if(*s == 0)
-		return 0;
+
     while(ptr >= s)
 	{
 		if(*ptr == (unsigned char)c)
 			return (char *)ptr;
 		ptr--;
 	}
+	if(c == '\0')
+		return (char *)s + ft_strlen(s);
 	return NULL;
 }
+/*int main()
+{
+	char str[] = "";
+	printf("ur fun : %s\n", ft_strrchr(str, NULL));
+	printf("origin fun : %s\n", strrchr(str, NULL));
+}*/
