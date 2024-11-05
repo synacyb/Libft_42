@@ -1,36 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayadouay <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/05 10:59:36 by ayadouay          #+#    #+#             */
+/*   Updated: 2024/11/05 10:59:38 by ayadouay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-static char *count_len(char *s, char c, int *j)
+static char	*count_len(char *s, char c, int *j)
 {
-  int start = *j;
-  int len = 0;
-  while (s[*j] && s[*j] != c)
-  {
-	len++;
-	(*j)++;
-  }
-  return (ft_substr((const char *)s, (unsigned int)start, len));
-}
-static int count_word(char *s, char check)
-{
-    int size = 0;
-    int i = 0;
+	int	start;
+	int	len;
 
-    while (s[i] != '\0')
-    {
-      while (s[i] == check)
-        i++;
-      if (s[i])
-        size++;
-      while (s[i] && s[i] != check)
-        i++;
-    }
-    return size;
+	start = *j;
+	len = 0;
+	while (s[*j] && s[*j] != c)
+	{
+		len++;
+		(*j)++;
+	}
+	return (ft_substr((const char *)s, (unsigned int)start, len));
 }
 
-char **ft_free(char **p, int i)
+static int	count_word(char *s, char check)
+{
+	int	size;
+	int	i;
+
+	size = 0;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		while (s[i] == check)
+			i++;
+		if (s[i])
+			size++;
+		while (s[i] && s[i] != check)
+			i++;
+	}
+	return (size);
+}
+
+char	**ft_free(char **p, int i)
 {
 	while (--i >= 0)
 		free(p[i]);
@@ -38,32 +56,35 @@ char **ft_free(char **p, int i)
 	return (NULL);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    int i = 0;
-    int j = 0;
+	int		i;
+	int		j;
+	int		nword;
+	char	**ptr;
 
+	i = 0;
+	j = 0;
 	if (!s)
 		return (NULL);
-    int nword = count_word((char *)s, c);
-    char **ptr;
-    ptr = (char **)malloc((nword + 1) * sizeof(char *));
-    if (!ptr)
-        return NULL;
-    while (i < nword)
-    {
-    	while (s[j] == c)
-				j++;
+	nword = count_word((char *)s, c);
+	ptr = (char **)malloc((nword + 1) * sizeof(char *));
+	if (!ptr)
+		return (NULL);
+	while (i < nword)
+	{
+		while (s[j] == c)
+			j++;
 		ptr[i] = count_len((char *)s, c, &j);
 		if (ptr[i] == NULL)
-		return (ft_free(ptr, i));
+			return (ft_free(ptr, i));
 		i++;
-    }
+	}
 	ptr[i] = NULL;
-    return ptr;
+	return (ptr);
 }
 
-/*int main() 
+/*int main()
 {
 	char s[] = "    ayoub adouay nadi manadich    !! olah ta naidi ";
 	char **ptr = ft_split(s, ' ');
@@ -74,5 +95,5 @@ char **ft_split(char const *s, char c)
 		printf("==> %s\n", ptr[i]);
 		i++;
 	}
-	return 0;
+	return (0);
 }*/
