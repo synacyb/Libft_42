@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t		count;
+	size_t			count;
 	unsigned char	*ptr;
 
 	ptr = s;
@@ -27,9 +27,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-/*int main()
-{
-    int buf[] = "";
-    ft_memset(buf, '42', 3);
-    printf("%s\n", buf);
-}*/

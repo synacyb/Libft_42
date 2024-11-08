@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -std=c99
 SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
@@ -8,18 +8,15 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS)
-	@echo "Library $(NAME) created."
+	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+#%.o: %.c
+#	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@$(DELETE) $(OBJS)
-	@echo "Object files deleted."
+	$(DELETE) $(OBJS)
 
 fclean: clean
-	@$(DELETE) $(NAME)
-	@echo "Library $(NAME) deleted."
+	$(DELETE) $(NAME)
 
-rebuild: fclean all
+re: fclean all

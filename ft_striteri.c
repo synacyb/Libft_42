@@ -1,24 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayadouay <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/08 10:11:33 by ayadouay          #+#    #+#             */
+/*   Updated: 2024/11/08 10:11:35 by ayadouay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
 
-/*void to_upper(unsigned int i, char *c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-  *c += i;
-}*/
+	int		i;
+	size_t	len;
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-    int i;
-    size_t len;
-
-    if (!s || !f)
-        return;
-
-    i = 0;
-    len = ft_strlen(s);
-    while (s[i] != '\0')
-    {
-        f(i, &s[i]);
-        i++;
-    }
+	if (!s || !f)
+		return ;
+	i = 0;
+	len = ft_strlen(s);
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

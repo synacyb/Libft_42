@@ -1,42 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayadouay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/03 11:59:59 by ayadouay          #+#    #+#             */
-/*   Updated: 2024/11/03 12:09:25 by ayadouay         ###   ########.fr       */
+/*   Created: 2024/11/08 11:37:23 by ayadouay          #+#    #+#             */
+/*   Updated: 2024/11/08 11:37:25 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*src;
-	size_t	i;
-	char	*str;
-
-	src = (char *)s + start;
-	i = 0;
-	if (!s)
-		NULL;
-	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
-	if (len + start > ft_strlen(s))
-		len = ft_strlen(s) - start;
-	str = malloc((len + 1) * sizeof(char));
-	if (!str)
+	if (lst == NULL)
 		return (NULL);
-	while (i < len)
-	{
-		*str = *src;
-		str++;
-		src++;
-		i++;
-	}
-	*str = '\0';
-	str = str - i;
-	return (str);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

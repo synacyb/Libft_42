@@ -17,11 +17,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 {
 	size_t				count;
 	unsigned char		*ptr1;
-	const unsigned char	*ptr2;
+	unsigned char		*ptr2;
 
 	ptr1 = (unsigned char *)dest;
 	ptr2 = (unsigned char *)src;
 	count = 0;
+	if (ptr1 == NULL && ptr2 == NULL)
+		return (NULL);
 	while (count < size)
 	{
 		*ptr1 = *ptr2;

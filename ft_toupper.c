@@ -11,23 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <ctype.h>
 
 int	ft_toupper(int c)
 {
-	char	ch;
-
-	ch = (unsigned char)c;
-	if (ch >= 97 && ch <= 122)
-	{
-		ch -= 32;
-		return (ch);
-	}
-	return (ch);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }
-/*int main()
-{
-    char c = 'g';
-    printf("%c", ft_toupper(c));
-}*/

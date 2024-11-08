@@ -29,9 +29,9 @@ int	ft_atoi(const char *nptr)
 	}
 	while (*nptr != '\0' && (*nptr >= '0' && *nptr <= '9'))
 	{
-		if (r > (LONG_MAX - (*nptr + 48)) / 10)
-			return (-signe * (signe == 1));
 		r = r * 10 + (*nptr - 48);
+		if (r < 0)
+			return (-signe * (signe == 1));
 		nptr++;
 	}
 	r = r * signe;
