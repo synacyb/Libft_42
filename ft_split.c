@@ -63,10 +63,10 @@ char	**ft_split(char const *s, char c)
 	int		nword;
 	char	**ptr;
 
-	i = 0;
-	j = 0;
 	if (!s)
 		return (NULL);
+	i = 0;
+	j = 0;
 	nword = count_word((char *)s, c);
 	ptr = (char **)malloc((nword + 1) * sizeof(char *));
 	if (!ptr)
@@ -83,17 +83,3 @@ char	**ft_split(char const *s, char c)
 	ptr[i] = NULL;
 	return (ptr);
 }
-
-/*int main()
-{
-	char s[] = "    ayoub adouay nadi manadich    !! olah ta naidi ";
-	char **ptr = ft_split(s, ' ');
-	int i = 0;
-	//printf("==> %p\n============\n", ptr);
-	while (ptr && ptr[i])
-	{
-		printf("==> %s\n", ptr[i]);
-		i++;
-	}
-	return (0);
-}*/

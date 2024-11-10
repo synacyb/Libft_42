@@ -1,9 +1,9 @@
 /*#include "libft.h"
-#include <string.h>
-void    delet(void *s)
+#include <fcntl.h>
+
+void    delet(unsigned int i ,char *s)
 {
-    free(s);
-    printf("\nis free it");
+    *s += i;
 }
 void f(void *counter)
 {
@@ -17,10 +17,6 @@ void f(void *counter)
 }
 int main()
 {
-    char *s = malloc(5*sizeof(char));
-    ft_memcpy(s,"abc",5);
-
-    t_list *head = ft_lstnew(s);
-    ft_lstiter(head, f);
-    printf("%s", head->content);
+    int *p;
+    int var = 12;
 }*/
