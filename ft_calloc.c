@@ -16,7 +16,7 @@ void	*ft_calloc(size_t num, size_t size)
 {
 	char	*ptr;
 
-	if (size > 0 && num > (size_t) - 1 / size)
+	if (size != 0 && num > ((size_t) - 1) / size)
 		return (NULL);
 	ptr = malloc(num * size);
 	if (!ptr)
