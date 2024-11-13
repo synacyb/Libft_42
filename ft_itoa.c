@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static	int	set_size_of_string(long num)
+static int set_size_of_string(long num)
 {
-	int	counter;
+	int counter;
 
 	counter = 0;
 	if (num < 0)
@@ -31,10 +31,10 @@ static	int	set_size_of_string(long num)
 	return (counter);
 }
 
-static	int	set_string(long num, char *str)
+static int set_string(long num, char *str)
 {
-	char	res;
-	int		index;
+	char res;
+	int index;
 
 	index = 0;
 	if (num < 0)
@@ -52,33 +52,33 @@ static	int	set_string(long num, char *str)
 }
 
 /*
-	ra[0] len;
-	ra[1] num;
-	ra[2] pos;
-	ra[3] i;
+	var[0] len;
+	var[1] num;
+	var[2] pos;
+	var[3] i;
 */
-char	*ft_itoa(int n)
+char *ft_itoa(int n)
 {
-	long	ra[4];
-	char	str[12];
-	char	*origin;
+	long var[4];
+	char str[12];
+	char *origin;
 
-	ra[1] = n;
-	ra[0] = set_size_of_string(ra[1]);
-	ra[3] = 0;
-	ra[2] = set_string(ra[1], str);
-	origin = malloc((ra[0] + 1) * sizeof(char));
+	var[1] = n;
+	var[0] = set_size_of_string(var[1]);
+	var[3] = 0;
+	var[2] = set_string(var[1], str);
+	origin = malloc((var[0] + 1) * sizeof(char));
 	if (!origin)
 		return (NULL);
-	if (ra[1] < 0)
-		origin[ra[3]++] = '-';
-	if (ra[1] == 0)
-		origin[ra[3]++] = '0';
+	if (var[1] < 0)
+		origin[var[3]++] = '-';
+	if (var[1] == 0)
+		origin[var[3]++] = '0';
 	else
 	{
-		while (ra[2] >= 0)
-			origin[ra[3]++] = str[ra[2]--];
+		while (var[2] >= 0)
+			origin[var[3]++] = str[var[2]--];
 	}
-	origin[ra[3]] = '\0';
+	origin[var[3]] = '\0';
 	return (origin);
 }
