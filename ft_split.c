@@ -48,7 +48,7 @@ static int	count_word(char *s, char check)
 	return (size);
 }
 
-char	**ft_free(char **p, int i)
+static	char	**ft_free(char **p, int i)
 {
 	while (--i >= 0)
 		free(p[i]);
