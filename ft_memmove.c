@@ -35,12 +35,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	ft_memcpy(dest, src, n);
 	return (dest);
 }
-/*int main()
-{
-	char src[] = "ayoubadouay";
-	char src2[] = "";
-	memmove(src + 3, src, 5);
-	ft_memmove(src + 3, src, 5);
-	printf("using origin function : %s\n", src);
-	printf("using ur function : %s\n", src);
-}*/

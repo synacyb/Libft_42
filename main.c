@@ -1,4 +1,4 @@
-#include "libft.h"
+/*#include "libft.h"
 #include <fcntl.h>
 
 void del_content(void *s)
@@ -15,4 +15,4 @@ int main()
         printf("%s\n", *res);
         res++;
     }
-}
+}*/

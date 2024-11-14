@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static int set_size_of_string(long num)
+static int	set_size_of_string(long num)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	if (num < 0)
@@ -31,10 +31,10 @@ static int set_size_of_string(long num)
 	return (counter);
 }
 
-static int set_string(long num, char *str)
+static	int	set_string(long num, char *str)
 {
-	char res;
-	int index;
+	char	res;
+	int		index;
 
 	index = 0;
 	if (num < 0)
@@ -50,18 +50,18 @@ static int set_string(long num, char *str)
 	index--;
 	return (index);
 }
-
 /*
 	var[0] len;
 	var[1] num;
 	var[2] pos;
 	var[3] i;
 */
-char *ft_itoa(int n)
+
+char	*ft_itoa(int n)
 {
-	long var[4];
-	char str[12];
-	char *origin;
+	long	var[4];
+	char	str[12];
+	char	*origin;
 
 	var[1] = n;
 	var[0] = set_size_of_string(var[1]);
