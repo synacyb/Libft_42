@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayadouay <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 09:39:51 by ayadouay          #+#    #+#             */
-/*   Updated: 2024/11/08 09:40:48 by ayadouay         ###   ########.fr       */
+/*   Updated: 2024/11/16 13:35:31 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ void	*ft_memchr(const void *str, int c, size_t n)
 		str1++;
 		count++;
 	}
-	return (0);
+	return (NULL);
 }
