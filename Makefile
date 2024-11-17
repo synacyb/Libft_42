@@ -21,7 +21,10 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-bonus: $(BOBJS)
+bonus:	$(BOBJS)
+
+ $(BOBJS) : $(BONUS)
+	$(CC) $(CFLAGS) -c $(BONUS)
 	ar	rcs	$(NAME)	$(BOBJS)
 
 %.o: %.c
@@ -37,4 +40,3 @@ re: fclean all
 
 .PHONY: all clean fclean re
 
-.SECONDARY : $(OBJS) $(BOBJS)
